@@ -1,6 +1,7 @@
 create database Universidad;
 use Universidad;
 
+-- CREACIÓN DE TABLA ESTUDIANTE
 CREATE TABLE estudiante (
 id_estudiante INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 nombre VARCHAR (100) NOT NULL,
@@ -9,6 +10,7 @@ correo VARCHAR (100) NOT NULL,
 carrera VARCHAR (100) NOT NULL
 );
 
+-- CREACIÓN DE TABLA PROFESOR 
 CREATE TABLE profesor (
 id_profesor INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 nombre VARCHAR (100) NOT NULL,
@@ -17,6 +19,7 @@ correo VARCHAR (100) NOT NULL,
 departamento VARCHAR (100) NOT NULL
 );
 
+-- CREACION DE TABLA MATERIA
 CREATE TABLE materia (
 id_materia INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 nombre VARCHAR (100) NOT NULL,
@@ -24,7 +27,7 @@ creditos INT NOT NULL,
 departamento VARCHAR (100) NOT NULL
 );
 
-
+-- CREACIÓN DE TABLA GRUPO
 CREATE TABLE grupo (
 id_grupo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 id_materia INT,
@@ -35,6 +38,7 @@ FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
 FOREIGN KEY (id_profesor) REFERENCES profesor (id_profesor)
 );
 
+-- CREACION DE TABLA INSCRIPCION 
 CREATE TABLE inscripcion (
 id_inscripcion INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 id_estudiante INT NOT NULL,
